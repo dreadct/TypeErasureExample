@@ -11,3 +11,9 @@
 "enums.gender.female" = "Female";
 "enums.gender.helisexual" = "Helisexual";
 "enums.gender.male" = "Male";
+
+// MARK: - Main
+
+"main.table.cells.gender.title" = "Gender";
+"main.table.cells.preferredGender.title" = "Preferred gender";
+"main.table.cells.unspecifiedValue" = "Unspecified";

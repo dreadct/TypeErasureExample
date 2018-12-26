@@ -28,7 +28,9 @@ final class MainViewController: UIViewController, ViewModelBased {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        updateUI()
+        setupUI()
+        setupViewModel()
+//        updateUI()
     }
 
 }
@@ -37,8 +39,35 @@ final class MainViewController: UIViewController, ViewModelBased {
 
 extension MainViewController {
 
+    private enum VisualMetrics {
+        static let estimatedRowHeight: CGFloat = 100.0
+    }
+
+    private func setupViewModel() {
+        let person = Person()
+        viewModel = MainViewModel(dependencies: person)
+    }
+
+    private func setupUI() {
+        setupTableView()
+    }
+
+    private func setupTableView() {
+        registerTableCells()
+
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.estimatedRowHeight = VisualMetrics.estimatedRowHeight
+        tableView.rowHeight = UITableView.automaticDimension
+    }
+
+    private func registerTableCells() {
+        tableView.register(cellType: PickerTableViewCell.self)
+    }
+
     private func updateUI() {
-        guard isViewLoaded else {
+        guard isViewLoaded,
+            viewModel != nil else {
             return
         }
 
@@ -75,9 +104,41 @@ extension MainViewController: UITableViewDataSource {
         }
 
         switch section {
-        case .dummy:
-            return UITableViewCell(style: .default, reuseIdentifier: nil)
+        case .person:
+            let cell = tableView.dequeueReusableCell(for: indexPath, cellType: PickerTableViewCell.self)
+            cell.viewModel = viewModel.personCell(at: indexPath.row)
+            return cell
         }
+    }
+
+}
+
+// MARK: - UITableViewDelegate
+
+extension MainViewController: UITableViewDelegate {
+
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        guard let cell = tableView.cellForRow(at: indexPath) as? PickerTableViewCell else { return }
+        cell.updateTableLayoutClosure = { [weak self] in
+            guard let strongSelf = self else { return }
+            strongSelf.tableView.updateTableLayout()
+        }
+    }
+
+    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        guard let cell = tableView.cellForRow(at: indexPath) as? PickerTableViewCell else {
+            return indexPath
+        }
+        cell.becomeFirstResponder()
+        return indexPath
+    }
+
+    func tableView(_ tableView: UITableView, willDeselectRowAt indexPath: IndexPath) -> IndexPath? {
+        guard let cell = tableView.cellForRow(at: indexPath) as? PickerTableViewCell else {
+            return indexPath
+        }
+        cell.resignFirstResponder()
+        return indexPath
     }
 
 }

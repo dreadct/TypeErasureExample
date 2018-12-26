@@ -21,6 +21,14 @@
 		5B56D20121D3CA2600243FFE /* SelectionDataSourceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B56D20021D3CA2600243FFE /* SelectionDataSourceType.swift */; };
 		5B56D20521D3CBCB00243FFE /* SectionedDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B56D20421D3CBCB00243FFE /* SectionedDataSource.swift */; };
 		5B6A204821D3CE840095E734 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5B6A204721D3CE840095E734 /* Localizable.strings */; };
+		5B6A206321D3D3650095E734 /* PickerTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6A206021D3D3650095E734 /* PickerTableViewCellModel.swift */; };
+		5B6A206421D3D3650095E734 /* PickerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B6A206121D3D3650095E734 /* PickerTableViewCell.xib */; };
+		5B6A206521D3D3650095E734 /* PickerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6A206221D3D3650095E734 /* PickerTableViewCell.swift */; };
+		5B6A206721D3D3F90095E734 /* AnySelectionDataSourceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6A206621D3D3F90095E734 /* AnySelectionDataSourceType.swift */; };
+		5B6A206A21D3D64A0095E734 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6A206921D3D64A0095E734 /* Person.swift */; };
+		5B6A208221D3DAFC0095E734 /* GenderAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6A208121D3DAFC0095E734 /* GenderAdapter.swift */; };
+		5B6A208421D3DEE90095E734 /* PickerDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6A208321D3DEE90095E734 /* PickerDataSource.swift */; };
+		5B6A208821D3E3920095E734 /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6A208721D3E3920095E734 /* UITableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +60,14 @@
 		5B56D20021D3CA2600243FFE /* SelectionDataSourceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionDataSourceType.swift; sourceTree = "<group>"; };
 		5B56D20421D3CBCB00243FFE /* SectionedDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionedDataSource.swift; sourceTree = "<group>"; };
 		5B6A204721D3CE840095E734 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		5B6A206021D3D3650095E734 /* PickerTableViewCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerTableViewCellModel.swift; sourceTree = "<group>"; };
+		5B6A206121D3D3650095E734 /* PickerTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PickerTableViewCell.xib; sourceTree = "<group>"; };
+		5B6A206221D3D3650095E734 /* PickerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerTableViewCell.swift; sourceTree = "<group>"; };
+		5B6A206621D3D3F90095E734 /* AnySelectionDataSourceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnySelectionDataSourceType.swift; sourceTree = "<group>"; };
+		5B6A206921D3D64A0095E734 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		5B6A208121D3DAFC0095E734 /* GenderAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderAdapter.swift; sourceTree = "<group>"; };
+		5B6A208321D3DEE90095E734 /* PickerDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerDataSource.swift; sourceTree = "<group>"; };
+		5B6A208721D3E3920095E734 /* UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				5B56D1F621D3C7B900243FFE /* Abstractions */,
+				5B6A208621D3E3820095E734 /* Extensions */,
 				5B56D1DA21D3C3AF00243FFE /* Launch */,
 				5B56D1D921D3C38D00243FFE /* Main */,
 			);
@@ -141,6 +158,7 @@
 		5B56D1D921D3C38D00243FFE /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				5B6A205F21D3D3650095E734 /* Cells */,
 				5B56D1BA21D3C33700243FFE /* Main.storyboard */,
 				5B56D1B821D3C33700243FFE /* MainViewController.swift */,
 				5B56D1FB21D3C86000243FFE /* MainViewModel.swift */,
@@ -161,6 +179,7 @@
 			children = (
 				5B56D1DF21D3C69200243FFE /* Abstractions */,
 				5B56D1DC21D3C5DC00243FFE /* Enums */,
+				5B6A206821D3D6340095E734 /* Models */,
 			);
 			path = BusinessLogic;
 			sourceTree = "<group>";
@@ -208,12 +227,57 @@
 			path = DataSource;
 			sourceTree = "<group>";
 		};
+		5B6A205F21D3D3650095E734 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				5B6A208321D3DEE90095E734 /* PickerDataSource.swift */,
+				5B6A206021D3D3650095E734 /* PickerTableViewCellModel.swift */,
+				5B6A206221D3D3650095E734 /* PickerTableViewCell.swift */,
+				5B6A206121D3D3650095E734 /* PickerTableViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		5B6A206821D3D6340095E734 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5B6A207C21D3D8B50095E734 /* Person */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		5B6A206B21D3D6540095E734 /* SelectionDataSource */ = {
 			isa = PBXGroup;
 			children = (
+				5B6A206621D3D3F90095E734 /* AnySelectionDataSourceType.swift */,
 				5B56D20021D3CA2600243FFE /* SelectionDataSourceType.swift */,
 			);
 			path = SelectionDataSource;
+			sourceTree = "<group>";
+		};
+		5B6A207C21D3D8B50095E734 /* Person */ = {
+			isa = PBXGroup;
+			children = (
+				5B6A207D21D3D8BC0095E734 /* Adapters */,
+				5B6A206921D3D64A0095E734 /* Person.swift */,
+			);
+			path = Person;
+			sourceTree = "<group>";
+		};
+		5B6A207D21D3D8BC0095E734 /* Adapters */ = {
+			isa = PBXGroup;
+			children = (
+				5B6A208121D3DAFC0095E734 /* GenderAdapter.swift */,
+			);
+			path = Adapters;
+			sourceTree = "<group>";
+		};
+		5B6A208621D3E3820095E734 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5B6A208721D3E3920095E734 /* UITableView.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -301,6 +365,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B6A206421D3D3650095E734 /* PickerTableViewCell.xib in Resources */,
 				5B56D1C121D3C33900243FFE /* LaunchScreen.storyboard in Resources */,
 				5B6A204821D3CE840095E734 /* Localizable.strings in Resources */,
 				5B56D1BE21D3C33900243FFE /* Assets.xcassets in Resources */,
@@ -355,11 +420,18 @@
 			files = (
 				5B56D1FC21D3C86000243FFE /* MainViewModel.swift in Sources */,
 				5B56D1F821D3C7C400243FFE /* ViewModel.swift in Sources */,
+				5B6A206521D3D3650095E734 /* PickerTableViewCell.swift in Sources */,
 				5B56D1E121D3C6B300243FFE /* StringDisplayable.swift in Sources */,
+				5B6A208221D3DAFC0095E734 /* GenderAdapter.swift in Sources */,
 				5B56D1DE21D3C5EE00243FFE /* Gender.swift in Sources */,
+				5B6A208421D3DEE90095E734 /* PickerDataSource.swift in Sources */,
 				5B56D20121D3CA2600243FFE /* SelectionDataSourceType.swift in Sources */,
 				5B56D20521D3CBCB00243FFE /* SectionedDataSource.swift in Sources */,
 				5B56D1B921D3C33700243FFE /* MainViewController.swift in Sources */,
+				5B6A206721D3D3F90095E734 /* AnySelectionDataSourceType.swift in Sources */,
+				5B6A206321D3D3650095E734 /* PickerTableViewCellModel.swift in Sources */,
+				5B6A206A21D3D64A0095E734 /* Person.swift in Sources */,
+				5B6A208821D3E3920095E734 /* UITableView.swift in Sources */,
 				5B56D1FA21D3C7D500243FFE /* ViewModelBased.swift in Sources */,
 				5B56D1B721D3C33700243FFE /* AppDelegate.swift in Sources */,
 			);
