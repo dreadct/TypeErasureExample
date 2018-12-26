@@ -1,0 +1,13 @@
+/* 
+  Localizable.strings
+  TypeErasureExample
+
+  Created by Vadim Zhilinkov on 26/12/2018.
+  Copyright © 2018 dreadct. All rights reserved.
+*/
+
+// MARK: - Enums
+
+"enums.gender.female" = "Female";
+"enums.gender.helisexual" = "Helisexual";
+"enums.gender.male" = "Male";
